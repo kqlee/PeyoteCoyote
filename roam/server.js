@@ -13,6 +13,7 @@ var boundingBoxGenerator = require('./App/Utils/boundingBoxGenerator');
 var roamOffGenerator = require('./App/Utils/roamOffGenerator');
 var saltRounds = 10;
 
+var port = Number(process.env.PORT || 3000);
 
 //config for email SMTP for gmail. We are send email notifications to users
 var smtpConfig = { 
@@ -199,6 +200,6 @@ app.post('/cancel', function(req, res){
   });
 });
 
-app.listen(3000, function(){
-  console.log('Example app listening on port 3000!');
+app.listen(port, function(){
+  console.log('roam app listening on port: ', port);
 });
